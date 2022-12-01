@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js"></script>
+    <script>
+$(document).ready(function(){
+    $('.page04_contentBox li').eq(0).addClass('on')
+    $('.page04_contentBox li img').eq(0).addClass('on')
+    var q = $('.page04_contentBox li img').index()
+    
+    $('.page01_btns li').eq(0).addClass('on')
+    
+    current=0;
+    $('.page01_btns li').click(function(){
+        var n=$(this).index()
+        console.log(n)
+        move(n)
+    })
+
+
+    timer();//함수호출
+            function timer(){
+                setIntervalID =setInterval(function(){
+                    let n = current + 1; //0 1 2 3 4 5 
+                    if(n == 3){
+                        n=0;
+                    }
+                    move(n)
+
+                },3000)
+            }
+
+            $('.page01_img li').hover(
+                function(){
+                    clearInterval(setIntervalID);
+                },
+                function(){
+                    timer();
+                })
+    function move(n){
+                if(current == n)return;//같은 버튼을 클릭했을때 실행되지 않게 함 
+                var currentE1 = $('.page01_img li').eq(current);//슬라이드에서 현재보이는 이미지 li
+                var nextE1 = $('.page01_img li').eq(n); //슬라이드에서 다음에 보이는 이미지 li
+
+                                                    //i = 클릭시 버튼값
+                currentE1.css({opacity:1}).stop().animate({opacity:0})
+                nextE1.css({opacity:0}).stop().animate({opacity:1})
+
+                $('.page01_btns li').removeClass('on')
+                $('.page01_btns li').eq(n).addClass('on')
+                current= n;
+    }
+    
+        $('.page04_contentBox li').hover(function(){
+            var n= $(this).index()
+            $('.page04_contentBox li').eq(n).addClass('on')
+        },
+        function(){
+            $('.page04_contentBox li').removeClass('on')
+        }
+        )
+  
+})
+
+    </script>
+
+</head>
+<body> 
+      <header>
+    <div class="header_in">
+        <div class="header_logo"><a href="#">logo</a></div>
+        <nav>
+            <div class="nav_in">
+                <ul class="nav_menu">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                </ul>
+                <div class="sub_menu">
+                    <a href="#">sub1</a>
+                    <a href="#">sub2</a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+    <div id="wrap">
+      
+    
+        <div class="main">
+            <section class="page01_se">
+             
+                <div class="page01">
+                    <ul class="page01_img">
+                        <li>
+                            <div class="page01_text">
+                                <h1>새로운도약</h1>
+                                <h2>자신감 넘치는 인간</h2>
+                                <p>할수있다 어쩌구 저쩌구</p>
+                                <p>할수있다 어쩌구 저쩌구</p>
+                                <p>할수있다 어쩌구 저쩌구</p>
+                            </div>
+                            <div class="page01_01_img">
+                                <img src="/img/page01 (1).jpg" alt="#">
+                            </div>
+
+                    </li>
+                        <li>
+                                <div class="page01_text">
+                                    <h1>새로운도약</h1>
+                                    <h2>자신감 넘치는 인간</h2>
+                                    <p>할수있다 어쩌구 저쩌구</p>
+                                    <p>할수있다 어쩌구 저쩌구</p>
+                                    <p>할수있다 어쩌구 저쩌구</p>
+                                </div>
+                                <div class="page01_01_img">
+                                    <img src="/img/page01 (4).jpg">
+                                </div>
+
+                        </li>
+                        <li>
+                            <div class="page01_text">
+                                <h1>새로운도약</h1>
+                                <h2>자신감 넘치는 인간</h2>
+                                <p>할수있다 어쩌구 저쩌구</p>
+                                <p>할수있다 어쩌구 저쩌구</p>
+                                <p>할수있다 어쩌구 저쩌구</p>
+                            </div>
+                            <div class="page01_01_img">
+                                <img src="/img/page01 (3).jpg">
+
+                            </div>
+
+
+                        </li>
+                    </ul>
+
+
+                    <div class="page01_btn">
+                        <ul class="page01_btns">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="page02_se">
+                <div class="page02">
+                    <div class="page02_title">
+                    <h2>MainText</h2>
+                    <h1>Sub Text</h1>
+                </div>
+                    <div class="page02_content">
+                        <ul class="page02_list">
+                            <li>
+                                <div class="page02_text">
+                                <h1>ListText</h1>
+                                <p>listSUBdddddddddddd</p>
+                                <p>listSUBdddddddddddddd</p>
+                                <p>listSUBdddddddddddd</p>
+
+                            </div>
+
+                            </li>
+                            <li>
+                                <div class="page02_text">
+                                    <h1>ListText</h1>
+                                    <p>listSUBdddddddddddd</p>
+                                <p>listSUBdddddddddddddd</p>
+                                <p>listSUBdddddddddddd</p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="page02_text">
+                                    <h1>ListText</h1>
+                                    <p>listSUBdddddddddddd</p>
+                                    <p>listSUBdddddddddddddd</p>
+                                    <p>listSUBdddddddddddd</p>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="page02_text">
+                                    <h1>ListText</h1>
+                                    <p>listSUBdddddddddddd</p>
+                                    <p>listSUBdddddddddddddd</p>
+                                    <p>listSUBdddddddddddd</p>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="page03_se">
+                <div class="page03">
+                    <div class="page03_title">
+                        <h1>mainText</h1>
+                    </div>
+                    <div class="page03_content">
+                        <div class="page03_left">
+                            <div class="page03_text01">
+                                <h1>text</h1>
+                                <h2>subtext</h2>
+                            </div>
+                            <div class="page03_text02">
+                                    <h2>subte</h2>
+                                    <p>asdasdasd</p>
+                                    <p>asdasdasd</p>
+                                    <p>asdasdasd</p>
+                                        <a href="#">click</a>
+                            </div>
+                        </div>
+                        <div class="page03_right">
+                            <div class="page03_text01">
+                                <h1>text</h1>
+                                <h2>subtext</h2>
+                            </div>
+                            <div class="page03_text02">
+                                    <h2>subte</h2>
+                                    <p>asdasdasd</p>
+                                    <p>asdasdasd</p>
+                                    <p>asdasdasd</p>
+                                        <a href="#">click</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="page04_se">
+                <div class="page04">
+                    <div class="page04_title">
+                        <h1>MainText</h1>  </div>
+                        <div class="page04_content">
+                            <ul class="page04_contentBox">
+                                <li>
+                                    <img src="/img/apple-ga85bba7ce_1280.jpg">
+                                    <figure>
+                                        <h1>mainText</h1>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <span>2022-11-29</span>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <img src="/img/page01 (4).jpg">
+                                    <figure>
+                                        <h1>mainText</h1>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <span>2022-11-29</span>
+                                    </figure>
+
+                                </li>
+                                <li>
+                                    <img src="/img/sub0202 (2).jpg">
+                                    <figure>
+                                        <h1>mainText</h1>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <span>2022-11-29</span>
+                                    </figure>
+                                </li>
+                                <li>     <img src="/img/page01 (3).jpg">
+                                    <figure>
+                                        <h1>mainText</h1>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+
+                                        </p>
+                                        <p>subText
+                                            subTextsubText
+                                        </p>
+                                        <span>2022-11-29</span>
+                                    </figure>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                  
+
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="footer">
+                <ul>
+                <li class="footer_left">
+                    <div class="left_textbox"> 
+                    <span>네이버㈜  사업자등록번호 000-00-00000</span>
+                           
+                            <p> 통신판매업신고번호 0000-경기성남-0000호</p>
+                            <p>  대표이사 김철수경기도 성남시 분당구 분당구용 00, NAVER 0000, 0000</P>
+                                <p> 전화 1588-0000이메일 abcdefu@naver.com</P>
+                                    <p> 사업자등록정보 확인호스팅 서비스 제공 : NAVER Cloud</p>
+                    </div>
+    
+                </li>
+                <li class="footer_right">
+                    <div class="right_textbox1">
+                      <span>고객센터</span>
+                      <P> 강원도 춘천시 퇴각로 00 </P>
+                        <p>  강원전문회사</P>
+                            <p>   전화 1588-0000</P>
+                                <p>  결제도용신고 1588-0000
+                            </P>
+                    </div>
+                    <div class="right_textbox2">
+                        <span>전자금융거래 분쟁처리</span>
+                        <p>
+                            전화 1588-0000
+                        </P>
+
+                            
+                            <p>  1:1문의 바로가기</P>
+    
+                        </p>
+                    </div>
+    
+                </li>
+            </ul>
+            </div>
+        </footer>
+
+    </div>    
+</body>
+</html>

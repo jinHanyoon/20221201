@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/sub01.css">
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            current=0;
+            $('.sub02_btn li').eq(0).addClass('on')
+        $('.sub02_btn li').click(function(){
+            var q= $(this).index()
+            console.log(q)
+            move(q)
+        })
+        
+        function move(q){
+        if(current == q) return;
+       var nowImg=$('.sub02_slider li').eq(current);
+       var nextImg= $('.sub02_slider li').eq(q);
+
+
+       nowImg.css({left:0}).stop().animate({left:'-400px'})
+       nextImg.css({left:'400px'}).stop().animate({left:0})
+       $('.sub02_btn li').removeClass('on')
+       $('.sub02_btn li').eq(q).addClass('on')
+       current = q;}
+
+        })
+    </script>
+</head>
+
+<body>    
+    <header>
+    <div class="header_in">
+    <div class="header_logo"><a href="#">logo</a></div>
+    <nav>
+        <div class="nav_in">
+            <ul class="nav_menu">
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            </ul>
+            <div class="sub_menu">
+                <a href="#">sub1</a>
+                <a href="#">sub2</a>
+
+            </div>
+        </div>
+    </nav>
+</div>
+</header>
+<div id="wrap">
+    <div class="main">
+        <section class="sub01_se">
+            <div class="sub01">
+                <div class="sub01_text">
+                    <h1>maintext!</h1>
+                    <h2>subtextstart&subtext</h2>
+                    <span>subtex &dfsfsafl</span>
+                    <p>subtext textaaaaaaaaaaaaaa textaaaaaaaaaaaaaa</p>
+                    <p>subtext textaaaaaaaaaaaaaa aaaaaaaaaaaa</p>
+                    <p>subtext textaaaaaaaaaaaaaa</p>
+
+                </div>
+                
+            </div>
+        </section>
+        <section class="sub02_se">
+            <div class="sub02">
+                <div class="sub02_content">
+                    <ul class="sub02_list">
+                        <li class="sub02_img01"></li>
+                        <li>
+                            <div class="sub02_text">
+                                <div class="sub02_title"><span>We ARE</span><h1>GAMBA</h1></div>
+                            </div>
+                            <div class="sub02_slider1">
+                            <ul class="sub02_slider">
+                                <li>
+                                    <div class="sub02_sliderText">
+                                        <h1>fdfadfsf</h1>
+                                        <h2>dfskfjasldjfl</h2>
+                                        <p>weiqjrqjkrqlkr</p>
+                                        <p>weiqjrqjkrqlkr</p>
+                                        <p>weiqjrqjkrqlkr</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub02_sliderText">
+                                        <h1>fdfadfsf</h1>
+                                        <h2>dfskfjasldjfl</h2>
+                                        <p>weiqjrqjkrqlkr</p>
+                                        <p>weiqjrqjkrqlkr</p>
+                                        <p>weiqjrqjkrqlkr</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub02_sliderText">
+                                        <h1>fdfadfsf</h1>
+                                        <h2>dfskfjasldjfl</h2>
+                                        <p>weiqjrqjkrqlkr</p>
+                                        <p>weiqjrqjkrqlkr</p>
+                                        <p>weiqjrqjkrqlkr</p>
+
+                                    </div>
+                                </li>
+                            
+
+                            </ul>
+                            <ul class="sub02_btn">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+
+                            </ul>
+                        </div>
+                        
+                        </li>
+                        <li class="sub02_img03"></li>
+
+                    </ul>
+                </div>
+                 
+                </div>
+            </div>
+        </section>
+        <section class="sub03_se">
+            <div class="sub03">
+                <div class="sub03_content">
+                    <h1 class="sub03_title">Best service</h1>
+                    <div class="left">
+                        <ul class="left_content">
+                            <li>
+                                <div class="leftIcon">
+                                    <img src="/img/icons8-air-shipping-78.png">
+                                </div>
+                                <div class="left_text">
+                                    <h1>maintext</h1>
+                                    <p>subtext subtextsubtextsubtext</p>
+                                    <p>subtext</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="leftIcon">
+                                    <img src="/img/icons8-calendar-78.png">
+                                </div>
+                                <div class="left_text">
+                                    <h1>maintext</h1>
+                                    <p>subtext subtextsubtextsubtext</p>
+                                    <p>subtext subtext</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="leftIcon">
+                                    <img src="/img/icons8-child-under-parental-control-78.png">
+                                </div>
+                                <div class="left_text">
+                                    <h1>maintext</h1>
+                                    <p>subtext subtextsubtextsubtext</p>
+                                    <p>subtext subtext</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="center">
+                        <img src="/img/cherry-g7b938a015_1280.jpg">
+
+                    </div>
+                    <div class="right">
+                        <ul class="right_content">
+                            <li>
+                                <div class="rightIcon">
+                                    <img src="/img/icons8-decline-documents-78.png">
+                                </div>
+                                <div class="right_text">
+                                    <h1>maintext</h1>
+                                    <p>subtext subtextsubtextsubtext</p>
+                                    <p>subtext</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rightIcon">
+                                    <img src="/img/icons8-kidney-care-78.png">
+                                </div>
+                                <div class="right_text">
+                                    <h1>maintext</h1>
+                                    <p>subtext subtextsubtextsubtext</p>
+                                    <p>subtext subtext</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rightIcon">
+                                    <img src="/img/icons8-price-tag-78.png">
+                                </div>
+                                <div class="right_text">
+                                    <h1>maintext</h1>
+                                    <p>subtext subtextsubtextsubtext</p>
+                                    <p>subtext subtext</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="page04_se">
+            <div class="page04">
+                <div class="page04_content">
+                    <ul class="page04_list">
+                        <li>
+                            <div class="page04_text">
+                                <h1>The BAKER</h1>
+
+                                <P>SDFLKJASDKLFJDLSKFJLASDKF</P>
+                                <P>SDFLKJASDKLFJDLSKFJLASDKJFLSDKAF</P>
+                                <P>SDFLKJASDKLFJDLSKFJLASFLSDKAF</P>
+                                <P>SDFLKJASDKLFJDLSKFJLASDKJFLSDKAF</P>
+                                <P>SDFLKJASDKLFJDLSKFJLASasdasdasDKJFLSDKAF</P>
+                                <a href="#">CLICK</a>
+                            </div>
+                        </li>
+                        <li>
+                                <div class="page04_text02">
+                                    <h2>SANDARA PARK</h2>
+                                    <div class="page04_icon">
+                                        <img src="/img/icons8-구글-로고-50.png">
+                                    </div>
+                                    <div class="page04_icon">
+                                        <img src="/img/icons8-지저귀다-30.png">
+
+                                    </div>
+                                    <div class="page04_icon">
+                                        <img src="/img/icons8-페이-스북-f-32.png">
+
+                                    </div>
+                                </div>
+                        </li>
+                        <li></li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
